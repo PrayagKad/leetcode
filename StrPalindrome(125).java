@@ -27,6 +27,29 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 
 class Solution {
     public boolean isPalindrome(String s) {
+        s = s.toLowerCase();
+        String c = s.replaceAll("[^a-zA-Z0-9]","").replaceAll(" ","");
+        String r = "";
+        if(s == null)
+        {
+            return false;
+        }
+        for(int i = c.length()-1 ; i>=0;i--)
+        {
+            r = r + c.charAt(i);
+        }
+        if(r.equals(c) )
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+}
+class Solution {
+    public boolean isPalindrome(String s) {
         char[] chars = s.toCharArray();
 
         int n = chars.length;
